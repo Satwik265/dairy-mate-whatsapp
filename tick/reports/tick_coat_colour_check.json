@@ -1,0 +1,24 @@
+{
+  "definition": "brownness = mean(R - B) over the 96x96 patch (same as the Colab check); Pearson r (point-biserial for the 0/1 label); test split, every grid patch the app scores",
+  "colab_reference": {
+    "pred_vs_brownness": -0.167,
+    "label_vs_brownness": -0.247,
+    "note": "old Colab patch set (capped negatives, leaky 152-group split); not the same patches"
+  },
+  "griffith_test_patches": {
+    "n_patches": 3996,
+    "n_positive": 956,
+    "pred_vs_brownness": -0.235,
+    "label_vs_brownness": -0.197,
+    "pred_vs_brownness_within_negatives": -0.176,
+    "pred_vs_brownness_within_positives": -0.062
+  },
+  "all_test_patches_incl_rf16_cows": {
+    "n_patches": 27397,
+    "n_positive": 956,
+    "pred_vs_brownness": -0.126,
+    "label_vs_brownness": -0.092,
+    "pred_vs_brownness_within_negatives": -0.096,
+    "pred_vs_brownness_within_positives": -0.062
+  }
+}

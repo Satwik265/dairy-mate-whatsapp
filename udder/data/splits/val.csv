@@ -1,0 +1,14 @@
+filepath,label,class_name,group_id
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-170639_png.rf.938323ecfaeee9a6d1482d36bd31e5e6.jpg,0,healthy,healthy__Screenshot-2024-09-14-170639
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-170728_png.rf.4066a6cbf4ed05492b1b8fdf8d375e77.jpg,0,healthy,healthy__Screenshot-2024-09-14-170728
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-170728_png.rf.a9866881c62cd26f74be1cad8076e060.jpg,0,healthy,healthy__Screenshot-2024-09-14-170728
+/home/claude/udder_pipeline/data/raw/healthy/cow-udder-farm-17986768.webp,0,healthy,healthy__cow-udder-farm-17986768
+/home/claude/udder_pipeline/data/raw/healthy/udder-cow-white-42464635 (1).webp,0,healthy,healthy__udder-cow-white-42464635 (1)
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-12-_jpg.rf.178e448c8f4a18dd17f48cf232c8b056.jpg,1,mastitis,mastitis__Mastitis-12-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-12-_jpg.rf.ca8631a9af5db443e85f1c0f28c4a602.jpg,1,mastitis,mastitis__Mastitis-12-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-13-_jpg.rf.b943cafffbc53a5ecfa0370754245942.jpg,1,mastitis,mastitis__Mastitis-13-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-13-_jpg.rf.d824b8436033b32c2c6c1343150fa728.jpg,1,mastitis,mastitis__Mastitis-13-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-18-_jpg.rf.18c972c9b9da34d1a34dea2e7eb02a17.jpg,1,mastitis,mastitis__Mastitis-18-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-18-_jpg.rf.fab275b974fed409687a8c9bf81d743d.jpg,1,mastitis,mastitis__Mastitis-18-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-68-_jpg.rf.71ced4e7fc9e159bf8f8f49e52c657a1.jpg,1,mastitis,mastitis__Mastitis-68-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-68-_jpg.rf.d3832a26cdebfc292b884e371ae99c94.jpg,1,mastitis,mastitis__Mastitis-68-

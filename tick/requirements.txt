@@ -1,0 +1,15 @@
+# Tick model. Versions are the ones it was trained and evaluated with (venv_yolo, Python 3.12.10, Windows, CUDA 12.6).
+# App inference (scripts/predict.py) needs only numpy, pillow, opencv and onnxruntime.
+numpy==2.5.2
+pillow==12.3.0
+opencv-python==5.0.0.93
+onnxruntime==1.30.0
+
+# Training / ONNX export (scripts/train_patch_classifier.py). CUDA wheels:
+#   pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu126
+torch==2.14.1
+torchvision==0.29.1
+onnx==1.23.1
+
+# Dataset download (scripts/download_dataset.py)
+requests==2.34.2

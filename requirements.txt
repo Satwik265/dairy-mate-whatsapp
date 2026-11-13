@@ -1,2 +1,11 @@
-﻿Flask
+Flask>=3.0,<4
 gunicorn
+requests>=2.31,<3
+numpy>=1.24
+Pillow>=10
+onnxruntime>=1.17
+opencv-python-headless>=4.8
+
+pymongo>=4.6,<5
+
+python-dotenv>=1.0,<2

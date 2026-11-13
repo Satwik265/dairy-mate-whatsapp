@@ -1,0 +1,36 @@
+{
+  "note": "routing the shared gate WOULD give; the tick app does not use it to reject or redirect photos",
+  "griffith_test": {
+    "n": 68,
+    "udder": 0.221,
+    "teat": 0.0,
+    "retake": 0.779,
+    "counts": {
+      "udder": 15,
+      "teat": 0,
+      "retake": 53
+    }
+  },
+  "rf16_cows_test": {
+    "n": 237,
+    "udder": 0.207,
+    "teat": 0.008,
+    "retake": 0.785,
+    "counts": {
+      "udder": 49,
+      "teat": 2,
+      "retake": 186
+    }
+  },
+  "external_web": {
+    "n": 35,
+    "udder": 0.2,
+    "teat": 0.343,
+    "retake": 0.457,
+    "counts": {
+      "udder": 7,
+      "teat": 12,
+      "retake": 16
+    }
+  }
+}

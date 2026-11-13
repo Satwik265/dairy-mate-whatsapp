@@ -1,4 +1,16 @@
-﻿.venv/
+.venv/
 __pycache__/
 .env
 *.pyc
+*.env
+.venv/
+tmp_uploads/
+logs/
+
+# Local test images
+DairyMate_Test_Images/
+
+# Alternative model formats not used by the ONNX integration
+udder/models/*.keras
+teat/models/*.keras
+tick/models/*.pt

@@ -1,0 +1,5 @@
+key,label,source
+Score_1/20200724_095132_RF_C1_PN_M.jpg,healthy,sctl
+Score_3/20200724_113008_RF_C3_PN_M.jpg,problem,sctl
+Score_3/R3_0547_55_crop_RF_C3_PN_m.jpg,problem,sctl
+Score_3/R7_0696_53_crop_RH_C3_PP_m.jpg,problem,sctl

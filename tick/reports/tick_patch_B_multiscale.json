@@ -1,0 +1,286 @@
+{
+  "model": "tick_patch_B",
+  "rule": {
+    "name": "topk_mean",
+    "k": 5
+  },
+  "configs": {
+    "1x only (current app)": {
+      "calibration": {
+        "A": 1.506039009492608,
+        "B": -2.53882822724609
+      },
+      "val": {
+        "n": 328,
+        "n_affected": 79,
+        "n_healthy": 249,
+        "roc_auc": 0.9839865792283057,
+        "pr_auc": 0.9586541047636352,
+        "confusion": {
+          "tp": 75,
+          "fn": 4,
+          "tn": 235,
+          "fp": 14
+        },
+        "sensitivity": 0.9493670886075949,
+        "specificity": 0.9437751004016064
+      },
+      "val_griffith_only": {
+        "n": 91,
+        "n_affected": 79,
+        "n_healthy": 12,
+        "roc_auc": 0.95042194092827,
+        "pr_auc": 0.9922394603741654,
+        "confusion": {
+          "tp": 75,
+          "fn": 4,
+          "tn": 8,
+          "fp": 4
+        },
+        "sensitivity": 0.9493670886075949,
+        "specificity": 0.6666666666666666
+      },
+      "test": {
+        "n": 305,
+        "n_affected": 61,
+        "n_healthy": 244,
+        "roc_auc": 0.9894517602794948,
+        "pr_auc": 0.9564373575429685,
+        "confusion": {
+          "tp": 57,
+          "fn": 4,
+          "tn": 233,
+          "fp": 11
+        },
+        "sensitivity": 0.9344262295081968,
+        "specificity": 0.9549180327868853
+      },
+      "test_griffith_only": {
+        "n": 68,
+        "n_affected": 61,
+        "n_healthy": 7,
+        "roc_auc": 0.9789227166276346,
+        "pr_auc": 0.9976594536333353,
+        "confusion": {
+          "tp": 57,
+          "fn": 4,
+          "tn": 6,
+          "fp": 1
+        },
+        "sensitivity": 0.9344262295081968,
+        "specificity": 0.8571428571428571
+      },
+      "test_ci95_group_bootstrap": {
+        "roc_auc": [
+          0.956,
+          1.0
+        ],
+        "sensitivity": [
+          0.849,
+          1.0
+        ],
+        "specificity": [
+          0.852,
+          0.987
+        ]
+      },
+      "external_web_caught": "5/35",
+      "external_web_per_image": {
+        "1.jpg": 0.049,
+        "10.jpeg": 0.0,
+        "11.webp": 0.001,
+        "12.jpeg": 0.018,
+        "14.jpeg": 0.002,
+        "15.jpeg": 0.023,
+        "16.jpeg": 0.003,
+        "17.webp": 0.0,
+        "18.jpg": 0.01,
+        "19.jpg": 0.0,
+        "2.webp": 0.0,
+        "20.jpg": 0.0,
+        "21.jpg": 0.016,
+        "22.jpg": 0.54,
+        "23.jpg": 0.001,
+        "24.jpg": 0.001,
+        "3.jpeg": 0.002,
+        "4.webp": 0.009,
+        "5.jpeg": 0.038,
+        "6.webp": 0.0,
+        "7.jpeg": 0.01,
+        "9.webp": 0.0,
+        "20220623cattleticks.jpg": 0.372,
+        "5-Simple-Signs-Your-Goat-Has-Ringworm.jpg": 0.874,
+        "54867340856_2dd588a800.jpg": 0.016,
+        "684af74574f5e.image.jpg": 0.155,
+        "Asian_Longhorned_Tick-Figure-4.jpg": 0.185,
+        "Cropped ASIAN LONGHHORNED TICKS ON NC COW copy.jpg": 0.0,
+        "gettyimages-1183753170-612x612.jpg": 0.002,
+        "IMG_2963.JPG": 0.893,
+        "OIP (1).jfif": 0.0,
+        "OIP.jfif": 0.009,
+        "Tick-Infestation-1152x1536.jpg": 0.0,
+        "tick-infestations.jpg": 0.891,
+        "ticks-on-cattle-in-summer-france-2H0C2Y9.jpg": 0.938
+      },
+      "false_alarms_teat_sctl_healthy_test": "12/137",
+      "false_alarms_udder_healthy": "8/27"
+    },
+    "1x + 1/2 + 1/4 + 1/8": {
+      "calibration": {
+        "A": 1.4899378020193494,
+        "B": -2.8767753289984195
+      },
+      "val": {
+        "n": 328,
+        "n_affected": 79,
+        "n_healthy": 249,
+        "roc_auc": 0.9860708657414468,
+        "pr_auc": 0.9647279285775201,
+        "confusion": {
+          "tp": 73,
+          "fn": 6,
+          "tn": 236,
+          "fp": 13
+        },
+        "sensitivity": 0.9240506329113924,
+        "specificity": 0.9477911646586346
+      },
+      "val_griffith_only": {
+        "n": 91,
+        "n_affected": 79,
+        "n_healthy": 12,
+        "roc_auc": 0.9651898734177216,
+        "pr_auc": 0.9946898085214558,
+        "confusion": {
+          "tp": 73,
+          "fn": 6,
+          "tn": 8,
+          "fp": 4
+        },
+        "sensitivity": 0.9240506329113924,
+        "specificity": 0.6666666666666666
+      },
+      "test": {
+        "n": 305,
+        "n_affected": 61,
+        "n_healthy": 244,
+        "roc_auc": 0.9919376511690405,
+        "pr_auc": 0.9670936916111978,
+        "confusion": {
+          "tp": 59,
+          "fn": 2,
+          "tn": 231,
+          "fp": 13
+        },
+        "sensitivity": 0.9672131147540983,
+        "specificity": 0.9467213114754098
+      },
+      "test_griffith_only": {
+        "n": 68,
+        "n_affected": 61,
+        "n_healthy": 7,
+        "roc_auc": 0.9882903981264637,
+        "pr_auc": 0.9987027366472766,
+        "confusion": {
+          "tp": 59,
+          "fn": 2,
+          "tn": 5,
+          "fp": 2
+        },
+        "sensitivity": 0.9672131147540983,
+        "specificity": 0.7142857142857143
+      },
+      "test_ci95_group_bootstrap": {
+        "roc_auc": [
+          0.964,
+          1.0
+        ],
+        "sensitivity": [
+          0.925,
+          1.0
+        ],
+        "specificity": [
+          0.842,
+          0.983
+        ]
+      },
+      "external_web_caught": "7/35",
+      "external_web_per_image": {
+        "1.jpg": 0.044,
+        "10.jpeg": 0.003,
+        "11.webp": 0.008,
+        "12.jpeg": 0.219,
+        "14.jpeg": 0.096,
+        "15.jpeg": 0.017,
+        "16.jpeg": 0.017,
+        "17.webp": 0.002,
+        "18.jpg": 0.959,
+        "19.jpg": 0.0,
+        "2.webp": 0.0,
+        "20.jpg": 0.0,
+        "21.jpg": 0.106,
+        "22.jpg": 0.851,
+        "23.jpg": 0.001,
+        "24.jpg": 0.012,
+        "3.jpeg": 0.006,
+        "4.webp": 0.01,
+        "5.jpeg": 0.06,
+        "6.webp": 0.0,
+        "7.jpeg": 0.035,
+        "9.webp": 0.0,
+        "20220623cattleticks.jpg": 0.52,
+        "5-Simple-Signs-Your-Goat-Has-Ringworm.jpg": 0.825,
+        "54867340856_2dd588a800.jpg": 0.012,
+        "684af74574f5e.image.jpg": 0.115,
+        "Asian_Longhorned_Tick-Figure-4.jpg": 0.138,
+        "Cropped ASIAN LONGHHORNED TICKS ON NC COW copy.jpg": 0.0,
+        "gettyimages-1183753170-612x612.jpg": 0.002,
+        "IMG_2963.JPG": 0.85,
+        "OIP (1).jfif": 0.0,
+        "OIP.jfif": 0.01,
+        "Tick-Infestation-1152x1536.jpg": 0.0,
+        "tick-infestations.jpg": 0.847,
+        "ticks-on-cattle-in-summer-france-2H0C2Y9.jpg": 0.911
+      },
+      "false_alarms_teat_sctl_healthy_test": "13/137",
+      "false_alarms_udder_healthy": "10/27"
+    }
+  },
+  "external_top_scale": {
+    "1.jpg": 1.0,
+    "10.jpeg": 0.25,
+    "11.webp": 0.5,
+    "12.jpeg": 0.5,
+    "14.jpeg": 0.25,
+    "15.jpeg": 1.0,
+    "16.jpeg": 0.5,
+    "17.webp": 0.5,
+    "18.jpg": 0.5,
+    "19.jpg": 0.125,
+    "2.webp": 1.0,
+    "20.jpg": 0.5,
+    "21.jpg": 0.5,
+    "22.jpg": 0.5,
+    "23.jpg": 1.0,
+    "24.jpg": 0.5,
+    "3.jpeg": 0.5,
+    "4.webp": 1.0,
+    "5.jpeg": 1.0,
+    "6.webp": 1.0,
+    "7.jpeg": 0.25,
+    "9.webp": 0.5,
+    "20220623cattleticks.jpg": 1.0,
+    "5-Simple-Signs-Your-Goat-Has-Ringworm.jpg": 1.0,
+    "54867340856_2dd588a800.jpg": 1.0,
+    "684af74574f5e.image.jpg": 1.0,
+    "Asian_Longhorned_Tick-Figure-4.jpg": 1.0,
+    "Cropped ASIAN LONGHHORNED TICKS ON NC COW copy.jpg": 0.5,
+    "gettyimages-1183753170-612x612.jpg": 1.0,
+    "IMG_2963.JPG": 1.0,
+    "OIP (1).jfif": 0.5,
+    "OIP.jfif": 1.0,
+    "Tick-Infestation-1152x1536.jpg": 1.0,
+    "tick-infestations.jpg": 1.0,
+    "ticks-on-cattle-in-summer-france-2H0C2Y9.jpg": 1.0
+  }
+}

@@ -1,0 +1,17 @@
+filepath,label,class_name,group_id
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-165915_png.rf.5843d0bea6e34c3fe8f0851422fa96fb.jpg,0,healthy,healthy__Screenshot-2024-09-14-165915
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-174105_png.rf.6bccea106b4dc9a62919c0a193b533eb.jpg,0,healthy,healthy__Screenshot-2024-09-14-174105
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-180013_png.rf.7741d3a0b1568669c222ddeb162b9513.jpg,0,healthy,healthy__Screenshot-2024-09-14-180013
+/home/claude/udder_pipeline/data/raw/healthy/Screenshot-2024-09-14-180013_png.rf.f82a139fe39b81e725065b214169a3b7.jpg,0,healthy,healthy__Screenshot-2024-09-14-180013
+/home/claude/udder_pipeline/data/raw/healthy/milk-factory-229530 (1).webp,0,healthy,healthy__milk-factory-229530 (1)
+/home/claude/udder_pipeline/data/raw/healthy/udder-cow-25652197.webp,0,healthy,healthy__udder-cow-25652197
+/home/claude/udder_pipeline/data/raw/healthy/white-cows-udders-udder-cow-42008641 (1).webp,0,healthy,healthy__white-cows-udders-udder-cow-42008641 (1)
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-14-_jpg.rf.431373d8b27eb38f677d93ad91086811.jpg,1,mastitis,mastitis__Mastitis-14-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-14-_jpg.rf.8da669929d09de0a57d2b3b0fc8681ae.jpg,1,mastitis,mastitis__Mastitis-14-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-14-_jpg.rf.fa38f9de28374d6e55e0069310501658.jpg,1,mastitis,mastitis__Mastitis-14-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-27-_jpg.rf.0293023bbb264ce796f7a0b1201e02d3.jpg,1,mastitis,mastitis__Mastitis-27-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-27-_jpg.rf.fd0169e3b1f61229cdea4173ae34e521.jpg,1,mastitis,mastitis__Mastitis-27-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-3-_jpg.rf.d243ba7a54b35521a3f8cc560d580be2.jpg,1,mastitis,mastitis__Mastitis-3-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-3-_jpg.rf.de7f9eef49aafa86a0bcbb8ed3d12723.jpg,1,mastitis,mastitis__Mastitis-3-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-33-_jpg.rf.5485a832166a6f5322f869cb67b4e163.jpg,1,mastitis,mastitis__Mastitis-33-
+/home/claude/udder_pipeline/data/raw/mastitis/Mastitis-52-_jpg.rf.80ae5d49f3d0929aa173c1eb21afb7db.jpg,1,mastitis,mastitis__Mastitis-52-

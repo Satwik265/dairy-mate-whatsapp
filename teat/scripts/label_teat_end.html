@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teat-end labelling</title>
+<style>
+  :root { --bg:#16181d; --panel:#20232a; --text:#e6e6e6; --muted:#9aa0a6; --accent:#ffd400; --ok:#4caf50; --warn:#ff9800; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.45 system-ui, sans-serif; display:flex; height:100vh; }
+  #main { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:12px; min-width:0; }
+  #wrap { position:relative; line-height:0; }
+  canvas { cursor:crosshair; max-width:100%; }
+  #bar { margin-top:10px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center; }
+  #side { width:320px; background:var(--panel); padding:16px; overflow-y:auto; }
+  h1 { font-size:16px; margin:0 0 8px; }
+  h2 { font-size:13px; margin:16px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  kbd { background:#333842; border-radius:4px; padding:1px 6px; font:12px monospace; }
+  .status { padding:3px 10px; border-radius:12px; font-size:12px; background:#333842; }
+  .status.box { background:var(--ok); color:#000; } .status.no_teat_end, .status.unusable { background:var(--warn); color:#000; }
+  progress { width:100%; height:10px; }
+  ul { padding-left:18px; margin:4px 0; } li { margin:3px 0; }
+  #msg { color:var(--warn); min-height:20px; }
+  button { background:#333842; color:var(--text); border:0; border-radius:6px; padding:6px 12px; cursor:pointer; font:inherit; }
+  button:hover { background:#444a56; }
+</style>
+</head>
+<body>
+<div id="main">
+  <div id="wrap"><canvas id="cv"></canvas></div>
+  <div id="bar">
+    <button id="prev">&larr; Prev</button>
+    <span id="pos"></span>
+    <span id="state" class="status">not labelled</span>
+    <button id="next">Next &rarr;</button>
+    <button id="first">First not done</button>
+  </div>
+  <div id="msg"></div>
+</div>
+<div id="side">
+  <h1>Teat-end labelling</h1>
+  <progress id="prog" value="0" max="1"></progress>
+  <div id="counts"></div>
+
+  <h2>Keys</h2>
+  <ul>
+    <li>Drag: draw a box (several allowed)</li>
+    <li><kbd>Enter</kbd> save boxes &amp; next</li>
+    <li><kbd>N</kbd> no teat end visible &amp; next</li>
+    <li><kbd>U</kbd> unusable photo &amp; next</li>
+    <li><kbd>Z</kbd> undo last box &middot; right-click a box to delete it</li>
+    <li><kbd>&larr;</kbd> <kbd>&rarr;</kbd> previous / next (no save)</li>
+  </ul>
+
+  <h2>What to box</h2>
+  <ul>
+    <li>The <b>teat end</b>: the tip with the opening (orifice) and the whole ring of skin around it.</li>
+    <li>Include the full ring, rough or smooth, plus a small margin. Roughly the last third of the teat; never the whole teat.</li>
+    <li>Same box size whether the ring looks healthy or rough. Don't let the condition change where you draw.</li>
+    <li>One box per teat end you can clearly see. Skip blurry or far-away teat ends.</li>
+    <li>Teat end cut off by the photo edge: box the visible part if the orifice area shows, otherwise <kbd>N</kbd>.</li>
+    <li><kbd>U</kbd> only if the photo isn't a teat at all, or is too blurry to place a box.</li>
+  </ul>
+  <p style="color:var(--muted)">Saved straight to <code>teat/curation/teat_end_labels.csv</code>. Stop any time.</p>
+</div>
+
+<script>
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+let items = [], idx = 0, img = new Image(), boxes = [], drag = null;
+
+async function init() {
+  items = await (await fetch("/api/items")).json();
+  idx = Math.max(0, items.findIndex(it => !it.label_row));
+  if (items.every(it => it.label_row)) idx = 0;
+  show();
+}
+
+function done() { return items.filter(it => it.label_row).length; }
+
+function updateSide() {
+  const prog = document.getElementById("prog");
+  prog.max = items.length; prog.value = done();
+  const by = {};
+  for (const it of items) { by[it.split] ??= [0, 0]; by[it.split][1]++; if (it.label_row) by[it.split][0]++; }
+  document.getElementById("counts").innerHTML =
+    `<b>${done()} / ${items.length}</b> done<br>` +
+    Object.entries(by).map(([s, [d, n]]) => `${s}: ${d}/${n}`).join(" &middot; ");
+}
+
+function parseBoxes(s) {
+  return s ? s.split(";").map(b => b.split(" ").map(Number)) : [];
+}
+
+function show() {
+  const it = items[idx];
+  const row = it.label_row;
+  boxes = row && row.status === "box" ? parseBoxes(row.boxes) : [];
+  const st = document.getElementById("state");
+  st.className = "status " + (row ? row.status : "");
+  st.textContent = row ? row.status.replace(/_/g, " ") : "not labelled";
+  document.getElementById("pos").textContent = `${idx + 1} / ${items.length}`;
+  document.getElementById("msg").textContent = "";
+  updateSide();
+  img = new Image();
+  img.onload = layout;
+  img.src = `/img/${it.split}/${it.label}/${it.id}`;
+}
+
+function layout() {
+  const maxW = document.getElementById("main").clientWidth - 24, maxH = window.innerHeight - 90;
+  const s = Math.min(maxW / img.width, maxH / img.height, 3);
+  cv.width = Math.round(img.width * s); cv.height = Math.round(img.height * s);
+  draw();
+}
+
+function draw() {
+  ctx.drawImage(img, 0, 0, cv.width, cv.height);
+  ctx.lineWidth = 2;
+  for (const b of boxes.concat(drag ? [drag] : [])) {
+    const [x0, y0, x1, y1] = [Math.min(b[0], b[2]), Math.min(b[1], b[3]), Math.max(b[0], b[2]), Math.max(b[1], b[3])];
+    ctx.strokeStyle = "#000"; ctx.lineWidth = 4;
+    ctx.strokeRect(x0 * cv.width, y0 * cv.height, (x1 - x0) * cv.width, (y1 - y0) * cv.height);
+    ctx.strokeStyle = "#ffd400"; ctx.lineWidth = 2;
+    ctx.strokeRect(x0 * cv.width, y0 * cv.height, (x1 - x0) * cv.width, (y1 - y0) * cv.height);
+  }
+}
+
+function pt(e) {
+  const r = cv.getBoundingClientRect();
+  return [Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1), Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1)];
+}
+
+cv.addEventListener("mousedown", e => { if (e.button !== 0) return; const [x, y] = pt(e); drag = [x, y, x, y]; });
+window.addEventListener("mousemove", e => { if (!drag) return; const [x, y] = pt(e); drag[2] = x; drag[3] = y; draw(); });
+window.addEventListener("mouseup", () => {
+  if (!drag) return;
+  const w = Math.abs(drag[2] - drag[0]) * cv.width, h = Math.abs(drag[3] - drag[1]) * cv.height;
+  if (w > 6 && h > 6) boxes.push([Math.min(drag[0], drag[2]), Math.min(drag[1], drag[3]), Math.max(drag[0], drag[2]), Math.max(drag[1], drag[3])]);
+  drag = null; draw();
+});
+cv.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  const [x, y] = pt(e);
+  const i = boxes.findLastIndex(b => x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3]);
+  if (i >= 0) { boxes.splice(i, 1); draw(); }
+});
+
+async function save(status) {
+  const msg = document.getElementById("msg");
+  if (status === "box" && !boxes.length) { msg.textContent = "Draw a box first, or press N if there's no teat end."; return; }
+  const it = items[idx];
+  const res = await fetch("/api/save", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: it.id, status, boxes: status === "box" ? boxes : [] }) });
+  if (!res.ok) { msg.textContent = "Save failed: " + await res.text(); return; }
+  it.label_row = { status, boxes: status === "box" ? boxes.map(b => b.map(v => v.toFixed(4)).join(" ")).join(";") : "" };
+  go(1);
+}
+
+function go(step) { idx = Math.min(Math.max(idx + step, 0), items.length - 1); show(); }
+
+document.getElementById("prev").onclick = () => go(-1);
+document.getElementById("next").onclick = () => go(1);
+document.getElementById("first").onclick = () => { const i = items.findIndex(it => !it.label_row); if (i >= 0) { idx = i; show(); } };
+window.addEventListener("keydown", e => {
+  if (e.key === "Enter") save("box");
+  else if (e.key === "n" || e.key === "N") save("no_teat_end");
+  else if (e.key === "u" || e.key === "U") save("unusable");
+  else if (e.key === "z" || e.key === "Z") { boxes.pop(); draw(); }
+  else if (e.key === "ArrowLeft") go(-1);
+  else if (e.key === "ArrowRight") go(1);
+});
+window.addEventListener("resize", () => { if (img.complete && img.width) layout(); });
+init();
+</script>
+</body>
+</html>

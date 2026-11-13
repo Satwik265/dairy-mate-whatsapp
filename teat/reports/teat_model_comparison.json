@@ -1,0 +1,93 @@
+{
+  "frozen_logreg": {
+    "C": 0.01,
+    "calibration": {
+      "A": 0.7973385738717278,
+      "B": 0.047962240896085175
+    },
+    "cv_oof": {
+      "roc_auc_all": 0.942,
+      "roc_auc_sctl_only": 0.843,
+      "flagged_sctl_score_1": 0.024,
+      "flagged_sctl_score_2": 0.121,
+      "flagged_sctl_score_3": 0.452,
+      "flagged_sctl_score_4": 0.875,
+      "flagged_web_healthy": 0.818,
+      "flagged_web_problem": 0.97,
+      "sensitivity": 0.854,
+      "specificity": 0.896
+    },
+    "test": {
+      "roc_auc_all": 0.928,
+      "roc_auc_sctl_only": 0.818,
+      "flagged_sctl_score_1": 0.015,
+      "flagged_sctl_score_2": 0.143,
+      "flagged_sctl_score_3": 0.31,
+      "flagged_sctl_score_4": 0.6,
+      "flagged_web_healthy": 0.917,
+      "flagged_web_problem": 0.922,
+      "sensitivity": 0.804,
+      "specificity": 0.852
+    },
+    "stress_flagged_problem": {
+      "whole_udder_healthy": 0.667,
+      "tick_cow_skin": 0.923,
+      "hand_in_photo": 0.957
+    }
+  },
+  "frozen_logreg_cellbal": {
+    "C": 0.01,
+    "calibration": {
+      "A": 0.36175423828294406,
+      "B": -0.31443637387838724
+    },
+    "cv_oof": {
+      "roc_auc_all": 0.929,
+      "roc_auc_sctl_only": 0.849,
+      "flagged_sctl_score_1": 0.024,
+      "flagged_sctl_score_2": 0.131,
+      "flagged_sctl_score_3": 0.413,
+      "flagged_sctl_score_4": 0.938,
+      "flagged_web_healthy": 0.364,
+      "flagged_web_problem": 0.875,
+      "sensitivity": 0.774,
+      "specificity": 0.909
+    },
+    "test": {
+      "roc_auc_all": 0.913,
+      "roc_auc_sctl_only": 0.824,
+      "flagged_sctl_score_1": 0.015,
+      "flagged_sctl_score_2": 0.171,
+      "flagged_sctl_score_3": 0.31,
+      "flagged_sctl_score_4": 0.6,
+      "flagged_web_healthy": 0.417,
+      "flagged_web_problem": 0.798,
+      "sensitivity": 0.706,
+      "specificity": 0.879
+    },
+    "stress_flagged_problem": {
+      "whole_udder_healthy": 0.593,
+      "tick_cow_skin": 0.692,
+      "hand_in_photo": 0.957
+    }
+  },
+  "finetuned_v2": {
+    "test": {
+      "roc_auc_all": 0.946,
+      "roc_auc_sctl_only": 0.843,
+      "flagged_sctl_score_1": 0.015,
+      "flagged_sctl_score_2": 0.143,
+      "flagged_sctl_score_3": 0.448,
+      "flagged_sctl_score_4": 0.8,
+      "flagged_web_healthy": 0.667,
+      "flagged_web_problem": 1.0,
+      "sensitivity": 0.896,
+      "specificity": 0.872
+    },
+    "stress_flagged_problem": {
+      "whole_udder_healthy": 1.0,
+      "tick_cow_skin": 1.0,
+      "hand_in_photo": 0.957
+    }
+  }
+}

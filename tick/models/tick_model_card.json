@@ -1,0 +1,91 @@
+{
+  "model": "tick_patch_B.onnx",
+  "animal_detector": "animal_detector.onnx",
+  "task": "photo of cattle -> P(ticks visible)",
+  "release_status": "beta",
+  "release_note": "Launched as Beta (decision 2026-10-05): misses most ticks on close-up phone photos (web close-ups caught 5/35). The app shows a Beta badge and invites farmers to contribute tick photos (opt-in) to build a close-up training set; see README 'Beta and photo collection'.",
+  "pipeline": "stretch photo to 640x640; COCO animal box + 10% pad (whole photo if none); 96x96 patches, stride 48",
+  "patch_input": "RGB 96x96, (x - ImageNet mean*255) / (std*255), NCHW float32; output logit",
+  "aggregation": {
+    "name": "topk_mean",
+    "k": 5
+  },
+  "score_transform": "logit",
+  "calibration": {
+    "A": 1.506039009492608,
+    "B": -2.53882822724609,
+    "fitted_on": "val split (class-balanced, equal prior odds)"
+  },
+  "decision": "affected if calibrated p >= 0.5",
+  "patch_threshold": 0.5,
+  "confidence_bands": [
+    [
+      "high",
+      0.85
+    ],
+    [
+      "medium",
+      0.65
+    ],
+    [
+      "low",
+      0.0
+    ]
+  ],
+  "selection": "model, rule and calibration chosen on val only; test reported once (reports/tick_evaluation.json)",
+  "training": "MobileNetV2 (ImageNet) patch classifier, PyTorch; variant B: 30% of negative patches from presumed tick-free rf16 cows (scripts/train_patch_classifier.py --name tick_patch_B --rf-neg-frac 0.3)",
+  "output": "image score = mean of the 5 highest patch probabilities; p = sigmoid(A * logit(score) + B), equal prior odds",
+  "healthy_max_confidence": "medium",
+  "confidence_rules": [
+    "confidence = max(p, 1-p) mapped to confidence_bands",
+    "a 'healthy' verdict is never 'high': the model misses ticks on close-up web photos with p near 0 (reports/tick_evaluation.json, external_web_sanity)",
+    "no animal recognised -> at most 'medium'"
+  ],
+  "ui_wording": {
+    "affected": "'Ticks detected' (low confidence: 'Possible ticks'); advice: see a vet / treat",
+    "healthy": "'No ticks seen in this photo' (+ 'check the animal by hand, especially ears, neck, dewlap, udder and tail base; ask a vet if unsure')",
+    "never": "no 'not sure' verdict; low confidence changes wording and advice only"
+  },
+  "evaluation": "reports/tick_evaluation.json (grouped split, group-bootstrap 95% CIs); selection: reports/tick_selection_val.json",
+  "test": {
+    "n": 305,
+    "n_affected": 61,
+    "n_healthy": 244,
+    "n_groups": 18,
+    "roc_auc": 0.989,
+    "roc_auc_ci95": [
+      0.956,
+      1.0
+    ],
+    "sensitivity": 0.934,
+    "sensitivity_ci95": [
+      0.849,
+      1.0
+    ],
+    "specificity": 0.955,
+    "specificity_ci95": [
+      0.852,
+      0.987
+    ],
+    "griffith_only": {
+      "n": 68,
+      "tp": 57,
+      "fn": 4,
+      "tn": 6,
+      "fp": 1
+    },
+    "rf16_cows_only": {
+      "n": 237,
+      "tn": 227,
+      "fp": 10
+    }
+  },
+  "external_web_sanity": "35 unique web photos of infested animals: 5 called affected (one of them a goat with ringworm). Not validation.",
+  "limitations": [
+    "positives come from one Roboflow set: a few Hereford calves in one crush pen (6 test groups); tick-free images are mostly other-source dairy/CCTV cows, so part of the AUC measures source, not ticks",
+    "fails on close-up / other-farm tick photos: 4 of 34 web cattle-tick photos caught",
+    "only 7 tick-free Griffith images in test: within-pen specificity is essentially unmeasured",
+    "no field phone photos anywhere in train/val/test",
+    "rf16 'tick-free' cows are presumed, not labelled for ticks"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "model": "udder_classifier.keras",
+  "task": "whole-udder photo -> P(mastitis)",
+  "input": "RGB photo stretched to 224x224, float32 raw 0-255, shape (1,224,224,3)",
+  "output": "calibrated P(mastitis) assuming equal prior odds; verdict = mastitis if p >= 0.5",
+  "confidence": "confidence = max(p, 1-p); bands: high >= 0.85, medium >= 0.65, low >= 0.0",
+  "architecture": "ImageNet MobileNetV2 (frozen) -> GAP -> logistic regression (folded with Platt calibration)",
+  "training_data": "Roboflow 'cow and mastitis detection' v16 (CC BY 4.0), curated whole-udder crops; 68 mastitis / 162 healthy source photos",
+  "evaluation": "see reports/udder_final_evaluation.json (grouped CV + held-out test)",
+  "limitations": [
+    "validated only on web/Roboflow images, not field photos",
+    "trained on udder crops; whole-cow photos with a small udder are out of scope",
+    "cannot detect subclinical mastitis"
+  ],
+  "calibration": {
+    "A": 0.6218298541421464,
+    "B": 0.3053676917240251
+  },
+  "size_mb": 9.2,
+  "cpu_ms_per_photo": 112
+}

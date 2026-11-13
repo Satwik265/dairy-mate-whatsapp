@@ -1,0 +1,163 @@
+{
+  "model": "teat_classifier_v2_384.keras",
+  "calibration": {
+    "A": 0.83014976978302,
+    "B": 0.19934678077697754,
+    "fitted_on": "val split, equal prior"
+  },
+  "all_test": {
+    "n": 312,
+    "roc_auc": 0.9485321365339482,
+    "sensitivity": 0.8834355828220859,
+    "specificity": 0.8590604026845637,
+    "balanced_accuracy": 0.8712479927533248,
+    "roc_auc_ci95": [
+      0.892,
+      0.976
+    ],
+    "sensitivity_ci95": [
+      0.73,
+      0.953
+    ],
+    "specificity_ci95": [
+      0.754,
+      0.944
+    ],
+    "balanced_accuracy_ci95": [
+      0.78,
+      0.93
+    ],
+    "distinct_groups": {
+      "healthy": 58,
+      "problem": 50
+    }
+  },
+  "sctl_only": {
+    "n": 171,
+    "roc_auc": 0.8359811077715759,
+    "sensitivity": 0.4411764705882353,
+    "specificity": 0.927007299270073,
+    "balanced_accuracy": 0.6840918849291542,
+    "roc_auc_ci95": [
+      0.759,
+      0.897
+    ],
+    "sensitivity_ci95": [
+      0.25,
+      0.615
+    ],
+    "specificity_ci95": [
+      0.875,
+      0.967
+    ],
+    "balanced_accuracy_ci95": [
+      0.581,
+      0.776
+    ],
+    "distinct_groups": {
+      "healthy": 55,
+      "problem": 19
+    }
+  },
+  "web_only": {
+    "n": 141,
+    "roc_auc": 0.9250645994832042,
+    "sensitivity": 1.0,
+    "specificity": 0.08333333333333333,
+    "balanced_accuracy": 0.5416666666666666,
+    "roc_auc_ci95": [
+      0.746,
+      0.998
+    ],
+    "sensitivity_ci95": [
+      1.0,
+      1.0
+    ],
+    "specificity_ci95": [
+      0.0,
+      0.5
+    ],
+    "balanced_accuracy_ci95": [
+      0.5,
+      0.75
+    ],
+    "distinct_groups": {
+      "healthy": 3,
+      "problem": 31
+    }
+  },
+  "sctl_same_cow_moments": {
+    "moments": 12,
+    "n": 36,
+    "roc_auc": 0.690625,
+    "sensitivity": 0.375,
+    "specificity": 0.85,
+    "balanced_accuracy": 0.6125
+  },
+  "flagged_rate_by_kind": {
+    "sctl_score_1": {
+      "n": 67,
+      "flagged": 0.0
+    },
+    "sctl_score_2": {
+      "n": 70,
+      "flagged": 0.143
+    },
+    "sctl_score_3": {
+      "n": 29,
+      "flagged": 0.345
+    },
+    "sctl_score_4": {
+      "n": 5,
+      "flagged": 1.0
+    },
+    "web_healthy": {
+      "n": 12,
+      "flagged": 0.917
+    },
+    "web_problem": {
+      "n": 129,
+      "flagged": 1.0
+    }
+  },
+  "confidence_bands_test": {
+    "high": {
+      "share": 0.702,
+      "right": 0.954
+    },
+    "medium": {
+      "share": 0.208,
+      "right": 0.754
+    },
+    "low": {
+      "share": 0.09,
+      "right": 0.5
+    }
+  },
+  "raw_vs_calibrated_extreme_share": {
+    "raw": 0.462,
+    "calibrated": 0.311
+  },
+  "stress_test": {
+    "whole_udder_healthy": {
+      "n": 27,
+      "flagged_problem": 1.0,
+      "very_confident": 0.444
+    },
+    "tick_cow_skin": {
+      "n": 13,
+      "flagged_problem": 1.0,
+      "very_confident": 0.692
+    },
+    "hand_in_photo_v1_quarantine": {
+      "n": 23,
+      "flagged_problem": 0.957,
+      "very_confident": 0.696
+    },
+    "whole_udder_mastitis_v1_moved_out": {
+      "n": 447,
+      "flagged_problem": 0.996,
+      "very_confident": 0.72
+    }
+  }
+}

@@ -1,0 +1,2712 @@
+{
+  "model": "tick_patch_B",
+  "rule": {
+    "name": "topk_mean",
+    "k": 5
+  },
+  "test_image_level": {
+    "n": 305,
+    "n_affected": 61,
+    "n_healthy": 244,
+    "roc_auc": 0.9894517602794948,
+    "pr_auc": 0.9564373575429685,
+    "confusion": {
+      "tp": 57,
+      "fn": 4,
+      "tn": 233,
+      "fp": 11
+    },
+    "sensitivity": 0.9344262295081968,
+    "specificity": 0.9549180327868853
+  },
+  "test_image_level_ci95_group_bootstrap": {
+    "roc_auc": [
+      0.956,
+      1.0
+    ],
+    "sensitivity": [
+      0.849,
+      1.0
+    ],
+    "specificity": [
+      0.852,
+      0.987
+    ]
+  },
+  "test_image_level_griffith_only": {
+    "n": 68,
+    "n_affected": 61,
+    "n_healthy": 7,
+    "roc_auc": 0.9789227166276346,
+    "pr_auc": 0.9976594536333353,
+    "confusion": {
+      "tp": 57,
+      "fn": 4,
+      "tn": 6,
+      "fp": 1
+    },
+    "sensitivity": 0.9344262295081968,
+    "specificity": 0.8571428571428571
+  },
+  "test_image_level_rf16_cows_only": {
+    "n": 237,
+    "n_affected": 0,
+    "n_healthy": 237,
+    "roc_auc": null,
+    "pr_auc": 0.0,
+    "confusion": {
+      "tp": 0,
+      "fn": 0,
+      "tn": 227,
+      "fp": 10
+    },
+    "sensitivity": 0.0,
+    "specificity": 0.9578059071729957
+  },
+  "test_patch_level": {
+    "griffith": {
+      "n_patches": 3996,
+      "n_positive": 956,
+      "fp_rate_at_0_5": 0.09243421052631579,
+      "pr_auc": 0.8120733588172981,
+      "roc_auc": 0.9199926709425237,
+      "precision_at_0_5": 0.722879684418146,
+      "recall_at_0_5": 0.7667364016736402
+    },
+    "rf16_cows": {
+      "n_patches": 23401,
+      "n_positive": 0,
+      "fp_rate_at_0_5": 0.011452502029827786
+    }
+  },
+  "test_animal_found_rate": {
+    "griffith": "68/68",
+    "rf16_cows": "176/237"
+  },
+  "test_tick_boxes_outside_animal_crop": "0/600",
+  "test_per_image": [
+    {
+      "source": "griffith",
+      "group": "other_suggested-6CxkN3cTYRd3YMDKqLRA",
+      "stem": "suggested-6CxkN3cTYRd3YMDKqLRA",
+      "label": 1,
+      "p": 0.9833,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "other_suggested-KXFznWXVLLv3CM5OmJVu",
+      "stem": "suggested-KXFznWXVLLv3CM5OmJVu",
+      "label": 0,
+      "p": 0.0097,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1390",
+      "label": 1,
+      "p": 0.9983,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1391",
+      "label": 1,
+      "p": 0.9986,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1392",
+      "label": 1,
+      "p": 0.9948,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1393",
+      "label": 1,
+      "p": 0.9972,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1396",
+      "label": 1,
+      "p": 0.9897,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1397",
+      "label": 1,
+      "p": 0.9951,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1398",
+      "label": 1,
+      "p": 0.992,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_139x",
+      "stem": "IMG_1399",
+      "label": 1,
+      "p": 0.9873,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1460",
+      "label": 1,
+      "p": 0.9884,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1461",
+      "label": 1,
+      "p": 0.9847,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1462",
+      "label": 1,
+      "p": 0.9774,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1463",
+      "label": 1,
+      "p": 0.9839,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1464",
+      "label": 1,
+      "p": 0.9793,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1465",
+      "label": 1,
+      "p": 0.9912,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1466",
+      "label": 1,
+      "p": 0.9834,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1467",
+      "label": 1,
+      "p": 0.9882,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1468",
+      "label": 1,
+      "p": 0.9835,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1469",
+      "label": 1,
+      "p": 0.9591,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1470",
+      "label": 1,
+      "p": 0.9857,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1471",
+      "label": 1,
+      "p": 0.9898,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1472",
+      "label": 1,
+      "p": 0.9291,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1473",
+      "label": 1,
+      "p": 0.9654,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1474",
+      "label": 1,
+      "p": 0.994,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1475",
+      "label": 1,
+      "p": 0.9866,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1476",
+      "label": 1,
+      "p": 0.9605,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1477",
+      "label": 1,
+      "p": 0.975,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1478",
+      "label": 1,
+      "p": 0.9943,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1479",
+      "label": 1,
+      "p": 0.9015,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1480",
+      "label": 1,
+      "p": 0.8643,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1481",
+      "label": 1,
+      "p": 0.9599,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1482",
+      "label": 1,
+      "p": 0.9817,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "photos_IMG_146x+2",
+      "stem": "IMG_1483",
+      "label": 1,
+      "p": 0.9046,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1015",
+      "label": 1,
+      "p": 0.9964,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1025",
+      "label": 1,
+      "p": 0.9963,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1035",
+      "label": 1,
+      "p": 0.9974,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1045",
+      "label": 1,
+      "p": 0.9991,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1055",
+      "label": 1,
+      "p": 0.9974,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1065",
+      "label": 1,
+      "p": 0.9948,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1075",
+      "label": 1,
+      "p": 0.9978,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame1095",
+      "label": 1,
+      "p": 0.9954,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame11",
+      "label": 1,
+      "p": 0.1975,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame19",
+      "label": 1,
+      "p": 0.9086,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame21",
+      "label": 1,
+      "p": 0.8237,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame22",
+      "label": 1,
+      "p": 0.9297,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame23",
+      "label": 1,
+      "p": 0.9158,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame24",
+      "label": 1,
+      "p": 0.9426,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame27",
+      "label": 1,
+      "p": 0.9961,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame285",
+      "label": 0,
+      "p": 0.1477,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame29",
+      "label": 1,
+      "p": 0.9888,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame295",
+      "label": 0,
+      "p": 0.1029,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame3",
+      "label": 1,
+      "p": 0.6036,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame325",
+      "label": 0,
+      "p": 0.0829,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame335",
+      "label": 0,
+      "p": 0.2637,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame345",
+      "label": 0,
+      "p": 0.5115,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame355",
+      "label": 1,
+      "p": 0.4834,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame38",
+      "label": 1,
+      "p": 0.9966,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame4",
+      "label": 1,
+      "p": 0.957,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame405",
+      "label": 1,
+      "p": 0.3855,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame44",
+      "label": 1,
+      "p": 0.9737,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame6",
+      "label": 1,
+      "p": 0.9825,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame7",
+      "label": 1,
+      "p": 0.9605,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame8",
+      "label": 1,
+      "p": 0.127,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1485",
+      "stem": "IMG_1485_frame9",
+      "label": 0,
+      "p": 0.1986,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1486",
+      "stem": "IMG_1486_frame19",
+      "label": 1,
+      "p": 0.9419,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1486",
+      "stem": "IMG_1486_frame6",
+      "label": 1,
+      "p": 0.7989,
+      "animal_found": true
+    },
+    {
+      "source": "griffith",
+      "group": "vid_IMG_1486",
+      "stem": "IMG_1486_frame8",
+      "label": 1,
+      "p": 0.5465,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_cow",
+      "stem": "cow-7214228_640",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_cow",
+      "stem": "cow-drinking-photo-1",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_cow",
+      "stem": "cow-drinking-photo-2",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-18-50",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-29-50",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-41-50",
+      "label": 0,
+      "p": 0.0187,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-45-50",
+      "label": 0,
+      "p": 0.0038,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-46-50",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-49-27",
+      "label": 0,
+      "p": 0.0021,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-50-27",
+      "label": 0,
+      "p": 0.0022,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-50-50",
+      "label": 0,
+      "p": 0.0566,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-51-27",
+      "label": 0,
+      "p": 0.0133,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-51-50",
+      "label": 0,
+      "p": 0.0044,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-52-50",
+      "label": 0,
+      "p": 0.0365,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-52-77",
+      "label": 0,
+      "p": 0.012,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-58-77",
+      "label": 0,
+      "p": 0.0226,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-02-59-50",
+      "label": 0,
+      "p": 0.0082,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-00-50",
+      "label": 0,
+      "p": 0.0875,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-01-27",
+      "label": 0,
+      "p": 0.0459,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-01-50",
+      "label": 0,
+      "p": 0.0033,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-02-27",
+      "label": 0,
+      "p": 0.014,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-02-50",
+      "label": 0,
+      "p": 0.0149,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-03-50",
+      "label": 0,
+      "p": 0.2593,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-14-50",
+      "label": 0,
+      "p": 0.0048,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-14-77",
+      "label": 0,
+      "p": 0.0116,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-19-27",
+      "label": 0,
+      "p": 0.0697,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-19-77",
+      "label": 0,
+      "p": 0.0806,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-20-50",
+      "label": 0,
+      "p": 0.0511,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame0-03-22-27",
+      "label": 0,
+      "p": 0.0007,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1000",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1013",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1020",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1025",
+      "label": 0,
+      "p": 0.0019,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1026",
+      "label": 0,
+      "p": 0.0029,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1030",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1042",
+      "label": 0,
+      "p": 0.0005,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1043",
+      "label": 0,
+      "p": 0.0044,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1054",
+      "label": 0,
+      "p": 0.0016,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1070",
+      "label": 0,
+      "p": 0.0003,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1071",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1077",
+      "label": 0,
+      "p": 0.0031,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1083",
+      "label": 0,
+      "p": 0.0016,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1084",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1085",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1087",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1090",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1131",
+      "label": 0,
+      "p": 0.0008,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1143",
+      "label": 0,
+      "p": 0.0074,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1144",
+      "label": 0,
+      "p": 0.0003,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1147",
+      "label": 0,
+      "p": 0.0118,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1148",
+      "label": 0,
+      "p": 0.0039,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1150",
+      "label": 0,
+      "p": 0.0078,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1157",
+      "label": 0,
+      "p": 0.0071,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1188",
+      "label": 0,
+      "p": 0.0044,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1705",
+      "label": 0,
+      "p": 0.0006,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1706",
+      "label": 0,
+      "p": 0.0006,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_1711",
+      "label": 0,
+      "p": 0.0005,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_931",
+      "label": 0,
+      "p": 0.0292,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_959",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_989",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_990",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_frame",
+      "stem": "frame_991",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_10",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_13",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_15",
+      "label": 0,
+      "p": 0.0259,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_17",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_21",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_23",
+      "label": 0,
+      "p": 0.0005,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_25",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_28",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_33",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_35",
+      "label": 0,
+      "p": 0.045,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_36",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_4",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_40",
+      "label": 0,
+      "p": 0.0025,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_42",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_45",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_46",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_51",
+      "label": 0,
+      "p": 0.0023,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_52",
+      "label": 0,
+      "p": 0.0005,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_53",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_54",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_55",
+      "label": 0,
+      "p": 0.0003,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_57",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_59",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_6",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_62",
+      "label": 0,
+      "p": 0.8107,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_63",
+      "label": 0,
+      "p": 0.0011,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_64",
+      "label": 0,
+      "p": 0.0022,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_8",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_grz",
+      "stem": "GRZ_9",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143636",
+      "label": 0,
+      "p": 0.0312,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143646",
+      "label": 0,
+      "p": 0.0023,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143652",
+      "label": 0,
+      "p": 0.969,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143656",
+      "label": 0,
+      "p": 0.1253,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143701",
+      "label": 0,
+      "p": 0.0291,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143707",
+      "label": 0,
+      "p": 0.5089,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143712",
+      "label": 0,
+      "p": 0.8849,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_143718",
+      "label": 0,
+      "p": 0.3778,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_144252",
+      "label": 0,
+      "p": 0.93,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_144521",
+      "label": 0,
+      "p": 0.972,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250118",
+      "stem": "IMG_20250118_144528",
+      "label": 0,
+      "p": 0.9846,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_103907",
+      "label": 0,
+      "p": 0.8492,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_104000",
+      "label": 0,
+      "p": 0.0594,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_104001",
+      "label": 0,
+      "p": 0.0571,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_105232",
+      "label": 0,
+      "p": 0.0691,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_105243",
+      "label": 0,
+      "p": 0.009,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_img_20250120",
+      "stem": "IMG_20250120_105251",
+      "label": 0,
+      "p": 0.0286,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000002",
+      "label": 0,
+      "p": 0.7088,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000006",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000030",
+      "label": 0,
+      "p": 0.0015,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000033",
+      "label": 0,
+      "p": 0.3497,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000055",
+      "label": 0,
+      "p": 0.0008,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000077",
+      "label": 0,
+      "p": 0.0204,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000092",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000116",
+      "label": 0,
+      "p": 0.0068,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000117",
+      "label": 0,
+      "p": 0.2112,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000119",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000130",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000153",
+      "label": 0,
+      "p": 0.0152,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000157",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000165",
+      "label": 0,
+      "p": 0.0188,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000176",
+      "label": 0,
+      "p": 0.0065,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000203",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000244",
+      "label": 0,
+      "p": 0.0169,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000254",
+      "label": 0,
+      "p": 0.0028,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000257",
+      "label": 0,
+      "p": 0.0006,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000279",
+      "label": 0,
+      "p": 0.0461,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "00000286",
+      "label": 0,
+      "p": 0.0289,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs004",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs010",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs022",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs052",
+      "label": 0,
+      "p": 0.0066,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs115",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs132",
+      "label": 0,
+      "p": 0.0026,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs202",
+      "label": 0,
+      "p": 0.0012,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs237",
+      "label": 0,
+      "p": 0.0016,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs271",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs284",
+      "label": 0,
+      "p": 0.0063,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs292",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs329",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs337",
+      "label": 0,
+      "p": 0.0306,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs339",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs343",
+      "label": 0,
+      "p": 0.0063,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs344",
+      "label": 0,
+      "p": 0.0006,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs423",
+      "label": 0,
+      "p": 0.0382,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs434",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs438",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs445",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_imgs+1",
+      "stem": "imgs514",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0001",
+      "label": 0,
+      "p": 0.0061,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0002",
+      "label": 0,
+      "p": 0.004,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0003",
+      "label": 0,
+      "p": 0.021,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0004",
+      "label": 0,
+      "p": 0.016,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0005",
+      "label": 0,
+      "p": 0.0064,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0006",
+      "label": 0,
+      "p": 0.0078,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0007",
+      "label": 0,
+      "p": 0.0123,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0008",
+      "label": 0,
+      "p": 0.0014,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_n140",
+      "stem": "140_mp4-0010",
+      "label": 0,
+      "p": 0.0062,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "1",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "10",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "100",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "101",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "105",
+      "label": 0,
+      "p": 0.0045,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "106",
+      "label": 0,
+      "p": 0.006,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "107",
+      "label": 0,
+      "p": 0.0055,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "108",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "110",
+      "label": 0,
+      "p": 0.0017,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "14",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "15",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "16",
+      "label": 0,
+      "p": 0.0014,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "19",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "2",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "20",
+      "label": 0,
+      "p": 0.0041,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "22",
+      "label": 0,
+      "p": 0.0014,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "23",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "24",
+      "label": 0,
+      "p": 0.1365,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "25",
+      "label": 0,
+      "p": 0.0008,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "28",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "29",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "30",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "31",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "32",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "33",
+      "label": 0,
+      "p": 0.0009,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "36",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "37",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "38",
+      "label": 0,
+      "p": 0.3508,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "39",
+      "label": 0,
+      "p": 0.0138,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "4",
+      "label": 0,
+      "p": 0.2442,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "40",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "43",
+      "label": 0,
+      "p": 0.0007,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "44",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "46",
+      "label": 0,
+      "p": 0.0003,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "47",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "49",
+      "label": 0,
+      "p": 0.0151,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "5",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "50",
+      "label": 0,
+      "p": 0.0004,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "51",
+      "label": 0,
+      "p": 0.0379,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "52",
+      "label": 0,
+      "p": 0.0099,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "54",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "55",
+      "label": 0,
+      "p": 0.0015,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "56",
+      "label": 0,
+      "p": 0.196,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "58",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "59",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "6",
+      "label": 0,
+      "p": 0.0036,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "60",
+      "label": 0,
+      "p": 0.0021,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "61",
+      "label": 0,
+      "p": 0.0078,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "62",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "65",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "66",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "67",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "70",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "71",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "74",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "75",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "76",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "8",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "80",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "81",
+      "label": 0,
+      "p": 0.0085,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "82",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "83",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "84",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "86",
+      "label": 0,
+      "p": 0.0001,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "88",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "90",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "91",
+      "label": 0,
+      "p": 0.0114,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "93",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "96",
+      "label": 0,
+      "p": 0.513,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "97",
+      "label": 0,
+      "p": 0.3428,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "98",
+      "label": 0,
+      "p": 0.005,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_num",
+      "stem": "99",
+      "label": 0,
+      "p": 0.0002,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_orig",
+      "stem": "orig_download-1_1612308973",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_stn",
+      "stem": "STN_108",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": false
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_walzcowcalftmw",
+      "stem": "WalzCowCalfTMW_4448",
+      "label": 0,
+      "p": 0.0031,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_win",
+      "stem": "WIN_20250120_00_07_39_Pro-2-",
+      "label": 0,
+      "p": 0.0,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_win",
+      "stem": "WIN_20250122_23_02_05_Pro_mp4-0811",
+      "label": 0,
+      "p": 0.098,
+      "animal_found": true
+    },
+    {
+      "source": "rf16_cows",
+      "group": "rf16_win",
+      "stem": "WIN_20250122_23_02_05_Pro_mp4-0841",
+      "label": 0,
+      "p": 0.0019,
+      "animal_found": true
+    }
+  ],
+  "external_web_sanity": {
+    "note": "web photos of tick-infested animals (one is a goat with ringworm; exact duplicates dropped; no tick-free web photos, so only misses count); sanity check, not validation",
+    "n": 35,
+    "called_affected": 5,
+    "animal_found": 14,
+    "per_image": [
+      {
+        "stem": "1",
+        "p": 0.049,
+        "animal_found": false
+      },
+      {
+        "stem": "10",
+        "p": 0.0001,
+        "animal_found": false
+      },
+      {
+        "stem": "11",
+        "p": 0.0007,
+        "animal_found": false
+      },
+      {
+        "stem": "12",
+        "p": 0.0176,
+        "animal_found": true
+      },
+      {
+        "stem": "14",
+        "p": 0.002,
+        "animal_found": true
+      },
+      {
+        "stem": "15",
+        "p": 0.0234,
+        "animal_found": false
+      },
+      {
+        "stem": "16",
+        "p": 0.0033,
+        "animal_found": false
+      },
+      {
+        "stem": "17",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "18",
+        "p": 0.0097,
+        "animal_found": false
+      },
+      {
+        "stem": "19",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "2",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "20",
+        "p": 0.0,
+        "animal_found": true
+      },
+      {
+        "stem": "21",
+        "p": 0.0164,
+        "animal_found": false
+      },
+      {
+        "stem": "22",
+        "p": 0.5404,
+        "animal_found": false
+      },
+      {
+        "stem": "23",
+        "p": 0.0012,
+        "animal_found": true
+      },
+      {
+        "stem": "24",
+        "p": 0.0015,
+        "animal_found": true
+      },
+      {
+        "stem": "3",
+        "p": 0.0018,
+        "animal_found": false
+      },
+      {
+        "stem": "4",
+        "p": 0.0091,
+        "animal_found": false
+      },
+      {
+        "stem": "5",
+        "p": 0.0379,
+        "animal_found": false
+      },
+      {
+        "stem": "6",
+        "p": 0.0004,
+        "animal_found": true
+      },
+      {
+        "stem": "7",
+        "p": 0.0097,
+        "animal_found": true
+      },
+      {
+        "stem": "9",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "20220623cattleticks",
+        "p": 0.3719,
+        "animal_found": true
+      },
+      {
+        "stem": "5-Simple-Signs-Your-Goat-Has-Ringworm",
+        "p": 0.8736,
+        "animal_found": true
+      },
+      {
+        "stem": "54867340856_2dd588a800",
+        "p": 0.0164,
+        "animal_found": true
+      },
+      {
+        "stem": "684af74574f5e.image",
+        "p": 0.155,
+        "animal_found": true
+      },
+      {
+        "stem": "Asian_Longhorned_Tick-Figure-4",
+        "p": 0.1853,
+        "animal_found": false
+      },
+      {
+        "stem": "Cropped ASIAN LONGHHORNED TICKS ON NC COW copy",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "gettyimages-1183753170-612x612",
+        "p": 0.0022,
+        "animal_found": false
+      },
+      {
+        "stem": "IMG_2963",
+        "p": 0.8934,
+        "animal_found": true
+      },
+      {
+        "stem": "OIP (1)",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "OIP",
+        "p": 0.0089,
+        "animal_found": false
+      },
+      {
+        "stem": "Tick-Infestation-1152x1536",
+        "p": 0.0,
+        "animal_found": false
+      },
+      {
+        "stem": "tick-infestations",
+        "p": 0.8906,
+        "animal_found": true
+      },
+      {
+        "stem": "ticks-on-cattle-in-summer-france-2H0C2Y9",
+        "p": 0.9385,
+        "animal_found": true
+      }
+    ]
+  }
+}

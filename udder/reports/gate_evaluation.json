@@ -1,0 +1,71 @@
+{
+  "v1": {
+    "outside_getty_healthy_udder": {
+      "n": 16,
+      "udder": 1.0
+    },
+    "outside_stock_healthy_udder": {
+      "n": 22,
+      "udder": 1.0
+    },
+    "outside_tick_cow_skin": {
+      "n": 13,
+      "retake": 0.538,
+      "udder": 0.308,
+      "teat": 0.154
+    },
+    "teat_test_roboflow": {
+      "n": 23,
+      "teat": 0.913,
+      "udder": 0.087
+    },
+    "udder_test": {
+      "n": 55,
+      "udder": 0.945,
+      "retake": 0.018,
+      "teat": 0.036
+    }
+  },
+  "v2": {
+    "outside_getty_healthy_udder": {
+      "n": 16,
+      "udder": 0.812,
+      "teat": 0.125,
+      "retake": 0.062
+    },
+    "outside_hand_in_photo": {
+      "n": 23,
+      "udder": 0.304,
+      "teat": 0.696
+    },
+    "outside_stock_healthy_udder": {
+      "n": 22,
+      "udder": 0.955,
+      "teat": 0.045
+    },
+    "outside_tick_cow_skin": {
+      "n": 13,
+      "udder": 0.385,
+      "retake": 0.462,
+      "teat": 0.154
+    },
+    "teat_test_roboflow": {
+      "n": 23,
+      "teat": 1.0
+    },
+    "teat_test_sctl": {
+      "n": 171,
+      "teat": 1.0
+    },
+    "teat_test_web": {
+      "n": 104,
+      "teat": 1.0
+    },
+    "udder_test": {
+      "n": 55,
+      "retake": 0.018,
+      "udder": 0.964,
+      "teat": 0.018
+    }
+  }
+}

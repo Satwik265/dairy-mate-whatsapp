@@ -1,0 +1,41 @@
+{
+  "model": "teat_classifier_v2.keras",
+  "task": "teat close-up photo -> P(teat problem)",
+  "input": "RGB photo stretched to 224x224, float32 raw 0-255 (preprocessing is inside the model)",
+  "output": "raw sigmoid; apply calibration: p = sigmoid(A * logit(raw) + B), equal prior odds",
+  "calibration": {
+    "A": 0.8519205451011658,
+    "B": 0.33033087849617004,
+    "fitted_on": "val split"
+  },
+  "confidence_bands": [
+    [
+      "high",
+      0.85
+    ],
+    [
+      "medium",
+      0.65
+    ],
+    [
+      "low",
+      0.0
+    ]
+  ],
+  "labels": "healthy = SCTL teat-end score 1-2 + healthy close-ups; problem = score 3-4 + teat lesions",
+  "ui_wording": "positive = 'Teat problem detected', never 'mastitis'",
+  "evaluation": "reports/teat_v2_evaluation.json (grouped split, group-bootstrap 95% CIs)",
+  "test": {
+    "roc_auc": 0.946,
+    "roc_auc_sctl_only": 0.843,
+    "sensitivity": 0.896,
+    "specificity": 0.872
+  },
+  "limitations": [
+    "healthy teats that don't look like the SCTL photos are often flagged (8/12 in test)",
+    "misses about half of rough teat-end rings (score 3)",
+    "cannot detect subclinical mastitis",
+    "validated only on web/Roboflow/SCTL images, not field photos",
+    "must sit behind the photo gate: non-teat photos are almost always called 'problem'"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "udder_test_photos": {
+    "n": 55,
+    "mastitis": 21,
+    "healthy": 34
+  },
+  "full_photo": {
+    "n": 55,
+    "roc_auc": 0.8879551820728291,
+    "healthy_flagged": 0.17647058823529413,
+    "mastitis_caught": 0.8095238095238095
+  },
+  "true_crop": {
+    "n": 55,
+    "roc_auc": 0.927170868347339,
+    "healthy_flagged": 0.14705882352941177,
+    "mastitis_caught": 0.8571428571428571
+  },
+  "full_photo_scored_only": {
+    "n": 53,
+    "roc_auc": 0.8924242424242425,
+    "healthy_flagged": 0.18181818181818182,
+    "mastitis_caught": 0.85
+  },
+  "detector_crop_scored_only": {
+    "n": 53,
+    "roc_auc": 0.9590909090909091,
+    "healthy_flagged": 0.24242424242424243,
+    "mastitis_caught": 0.95
+  },
+  "avg_full_and_detector_crop_scored_only": {
+    "n": 53,
+    "roc_auc": 0.9318181818181818,
+    "healthy_flagged": 0.12121212121212122,
+    "mastitis_caught": 0.9
+  },
+  "detector_actions_on_udder_photos": {
+    "score": 53,
+    "teat": 1,
+    "no_udder": 1
+  },
+  "confidence_bands_detector_crop": {
+    "high": 22,
+    "medium": 19,
+    "low": 12
+  },
+  "teat_closeup_photos": {
+    "teat": 298,
+    "score": 0,
+    "no_udder": 0
+  },
+  "external/getty_healthy_udder": {
+    "score": 13,
+    "teat": 2,
+    "no_udder": 1,
+    "flagged_mastitis": 0
+  },
+  "external/hand_in_photo": {
+    "score": 7,
+    "teat": 16,
+    "no_udder": 0,
+    "flagged_mastitis": 0
+  },
+  "external/stock_healthy_udder": {
+    "score": 21,
+    "teat": 1,
+    "no_udder": 0,
+    "flagged_mastitis": 4
+  },
+  "external/tick_cow_skin": {
+    "score": 5,
+    "teat": 2,
+    "no_udder": 6,
+    "flagged_mastitis": 2
+  }
+}
