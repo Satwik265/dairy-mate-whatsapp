@@ -159,7 +159,8 @@ class TickScreener:
 
     def __init__(self, models_dir=MODELS):
         models_dir = Path(models_dir)
-        card = json.load(open(models_dir / "tick_model_card.json"))
+        with open(models_dir / "tick_model_card.json", encoding="utf-8") as f:
+            card = json.load(f)
         self.card = card
         self.detector = AnimalDetector(models_dir / card["animal_detector"])
         self.patches = PatchModel(models_dir / card["model"])

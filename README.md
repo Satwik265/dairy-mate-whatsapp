@@ -1,37 +1,64 @@
-# DairyMate models
+# Dairy Mate AI — WhatsApp Backend & Health Screening System
 
-Computer-vision models for screening dairy cattle health from a phone photo. They are screening aids, **not** a veterinary diagnosis.
+AI-powered mobile screening aids for dairy cattle health (Udder mastitis screening, Teat condition analysis, and Tick detection) deployed on WhatsApp Cloud API, Flask, and Render.
 
-| Folder | Model | Status |
-|---|---|---|
-| `common/` | Shared photo gate (YOLO11n): finds a whole udder or a teat close-up and routes the photo | Done. Teat close-ups -> Teat Check 100% (298/298 test photos); whole udders -> Udder Check 96%; tick/cow-skin photos only 46% sent back. |
-| `udder/` | Whole udder: healthy vs. affected (MobileNetV2 features + logistic regression, calibrated) | v1 done (`udder/src/predict.py`). End-to-end test: ROC-AUC 0.93, 90% of mastitis caught, 12% of healthy flagged. Only 68 distinct mastitis photos. |
-| `teat/` | Teat close-up: healthy vs. teat problem (fine-tuned MobileNetV2, calibrated) | v2 done (`teat/scripts/predict.py`). Grouped test: ROC-AUC 0.95 (0.90-0.97), 0.84 on SCTL photos alone. Weak on rough rings (score 3: ~45% caught) and on healthy teats that don't look like the SCTL set (8/12 flagged). v1's ~97% was inflated by train/test leakage. |
-| `tick/` | Ticks visible: patch-based MobileNetV2 (96x96 patches, top-5 mean, calibrated) | v1 (`tick/scripts/predict.py`). Grouped test: ROC-AUC 0.99 (0.96-1.00), 57/61 tick photos caught, 95% of tick-free cows correct, but all tick photos come from one pen (6 test groups). **Fails on close-up web photos (4/34 caught); not ready for field use.** The old Colab patch metrics were from a leakier split. |
-| `web/` | Farmer website (FastAPI + plain HTML/JS) for all three checks, with an optional WhatsApp sign-up stored in a Google Sheet | In progress: works locally end to end (ONNX, no TensorFlow); deploying to Render free. See `web/README.md`. |
+> [!IMPORTANT]
+> **Veterinary Disclaimer**: Dairy Mate AI models are computer-vision screening aids designed for early detection and herd monitoring. They do **not** constitute a veterinary diagnosis. Always consult a qualified veterinary professional for diagnosis and clinical treatment plans.
 
-Every model has so far been validated only on web/Roboflow images, not on field photos.
+---
 
-## Layout
+## Capabilities
 
+| Screener | Pipeline Architecture | Input Specs | Output & Confidence |
+|---|---|---|---|
+| **Udder Check** | Shared YOLO11n Photo Gate + MobileNetV2 feature classifier + Logistic Regression | Whole udder photo | Healthy vs. Affected (Probabilistic risk score, High/Medium/Low confidence) |
+| **Teat Check** | Shared YOLO11n Photo Gate + Fine-tuned MobileNetV2 + Platt Calibration | Teat close-up photo | Healthy vs. Teat condition detected (Hyperkeratosis / damage screening) |
+| **Tick Check (Beta)** | YOLO11n Animal Detector + MobileNetV2 96x96 patch classifier + Top-K aggregation | Animal coat / body photo | Ticks detected vs. No ticks visible in photo area (Beta release) |
+
+---
+
+## Production Architecture
+
+- **Backend**: Flask 3.1 with Gunicorn on Render (`https://dairy-mate-whatsapp-11.onrender.com`)
+- **Messaging**: WhatsApp Cloud API (Graph API `v21.0`) with HMAC SHA-256 signature verification (`X-Hub-Signature-256`)
+- **Asynchronous Execution**: Immediate HTTP 200 webhook acknowledgment with background thread pool execution to eliminate timeout drops
+- **Session Memory**: Two-step photo screening support (if photo sent without caption, bot prompts user and processes follow-up keyword)
+- **Database**: MongoDB Atlas (`whatsapp_messages` and `user_sessions`) for audit trails, deduplication, and failure tracking
+- **Inference Runtime**: ONNX Runtime CPU (`onnxruntime`) with background model pre-warming on container startup
+
+---
+
+## WhatsApp Interaction Flow
+
+1. **Text Message**: Sending any greeting or text receives a menu explaining how to screen cattle photos.
+2. **Photo with Caption**: Send photo with caption `udder`, `teat`, or `tick` for instant automated screening.
+3. **Photo without Caption**: Send any photo; Dairy Mate AI will acknowledge the photo and prompt you to choose `udder`, `teat`, or `tick`. Replying with the keyword triggers immediate screening.
+
+---
+
+## Quick Start (Local Development)
+
+```bash
+# 1. Clone repository
+git clone https://github.com/Satwik265/dairy-mate-whatsapp.git
+cd dairy-mate-whatsapp
+
+# 2. Virtual environment setup
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run test suite
+python -m unittest discover -s tests
+
+# 5. Run local development server
+python app.py
 ```
-common/  gate.py (shared photo gate; weights in common/models/, not in git)
-teat/    scripts/ (build_dataset_v2, train, evaluate_v2, predict), curation/*.csv, reports/, models/*.json
-udder/   src/ (curate, build model, detector, evaluate, predict), data/curation/*.csv, reports/
-tick/    scripts/ (download_dataset, build_split, train_patch_classifier, evaluate, predict), curation/split_manifest.csv, reports/, models/*.json
-web/     static/ (website), server/ (FastAPI), apps_script/ (Google Sheet), deploy/ (ONNX + weights for Render), tests/; render.yaml (Render config)
-docs/    audit notes
-```
 
-Each app is one call: `UdderScreener().predict(photo)` / `TeatScreener().predict(photo)` / `TickScreener().predict(photo)` -> status
-(ok / retake / use the other check), label (healthy / affected), calibrated probability, confidence level
-(high / medium / low) and i18n keys for advice and the screening-aid disclaimer.
+---
 
-Raw images, datasets, venvs and model weights are not committed (see `.gitignore`). Weights are shared via GitHub Releases.
+## Detailed Operations Guide
 
-## Data sources and credits
-
-- Roboflow Universe, "cow and mastitis detection" by kirubel-yemane, v16, CC BY 4.0:
-  https://universe.roboflow.com/kirubel-yemane/cow-and-mastitis-detection
-- SCTL teat-end images (healthy teats, "Score_1"), CC BY 4.0
-- Griffith University ticks dataset (Roboflow), CC BY 4.0 (tick model; the rf16 set above also supplies its tick-free cows)
+For complete configuration instructions, Meta Developer portal settings, permanent System User tokens, and troubleshooting, see [INTEGRATION_README.md](INTEGRATION_README.md).

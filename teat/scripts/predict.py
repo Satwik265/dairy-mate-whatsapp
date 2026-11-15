@@ -43,7 +43,8 @@ class TeatScreener:
     def __init__(self, models_dir=MODELS, gate=None, backend="keras"):
         # backend="onnx" runs the converted copy without TensorFlow (website server; see common/classifier.py)
         self.gate = gate or PhotoGate()
-        card = json.load(open(Path(models_dir) / "teat_model_card.json"))
+        with open(Path(models_dir) / "teat_model_card.json", encoding="utf-8") as f:
+            card = json.load(f)
         self.model = load_classifier(Path(models_dir) / card["model"], backend)
         self.A, self.B = card["calibration"]["A"], card["calibration"]["B"]
         self.bands = [(name, lo) for name, lo in card["confidence_bands"]]
